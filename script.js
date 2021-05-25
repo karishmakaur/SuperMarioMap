@@ -11,7 +11,7 @@ function initMap() {
  const marker = new google.maps.Marker({
     position: { lat: 34.66554770586654, lng: 135.43232194249637 },
     map,
-    title: "Yoshi\s House",
+    title: "Yoshi\'s House",
    icon: {
      url: "yoshi_house.svg",
      sacledsize: new google.maps.Size(38, 31)
@@ -20,7 +20,7 @@ function initMap() {
    });
    
   const infowindow = new google.maps.InfoWindow({
-    content: "Yoshi\s House",
+    content: "Yoshi\'s House",
   });
   
    marker.addListener("click", () => {
