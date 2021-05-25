@@ -8,19 +8,33 @@ function initMap() {
   streetViewControl: false  
 });
 
+const markers = [
+  [
+    "Yoshi\'s House",
+    34.66554770586654,
+    135.43232194249637,
+     "yoshi_house.svg",
+    38,
+    31
+    ]
+  ];
+
+  for(let i=0, i<markers.length; i++){
+    const currMarker = marker[i];
+    
  const marker = new google.maps.Marker({
-    position: { lat: 34.66554770586654, lng: 135.43232194249637 },
+    position: { lat: currMarker[1], lng: currMarker[2]},
     map,
-    title: "Yoshi\'s House",
+    title: currMarker[0],
    icon: {
-     url: "yoshi_house.svg",
-     sacledsize: new google.maps.Size(38, 31)
+     url: currMarker[3],
+     sacledsize: new google.maps.Size(currMarker[4], currMarker[5])
    },
    animation: google.maps.Animation.DROP
    });
    
   const infowindow = new google.maps.InfoWindow({
-    content: "Yoshi\'s House",
+    content: currMarker[0],
   });
   
    marker.addListener("click", () => {
